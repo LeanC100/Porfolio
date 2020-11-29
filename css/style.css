@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap); 
+
+*{
+    box-sizing: border-box; /* Esto es para que el width:350 lateral no varia debido al usar padding:1em*/
+    padding: 0%;
+    margin: 0%;
+}
+
+.lateral{
+    position: fixed;
+    padding: 2em;
+    width:350px;
+    height: 100%;
+    background-color: #3c59ff;
+}
+
+ /* Nombre y Foto del perfil*/
+.perfil__circulo{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    overflow:hidden;
+    border-radius:50%;    
+}
+
+.perfil__foto{
+    width:100%;
+}
+
+.perfil__nombres{
+    position: absolute;
+    color: #fff;
+    font-size:23px;
+    width: 300px;
+    margin-left:0.5em;
+}
+
+.perfil__circulo, .perfil__nombres{
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+/* Agradecimientos Container */
+.agradecimiento-container{
+    max-width:350px;
+    max-height: 50%;
+    stroke-width: 15;
+}
+
+/* Estrella */
+.estrella{
+    position: relative;
+    margin-top: 20%;
+}
+.estrella path{
+    fill: #0030ce;
+    stroke: #0030ce;
+}
+.estrella:hover path{
+    stroke-dasharray: 10;
+    stroke-dashoffset: 0;
+}
+.estrella:hover path{
+    animation: animacion-estrella 4.5s linear forwards;
+}
+@keyframes animacion-estrella
+{
+    0%
+    {
+        stroke-dashoffset: 0;
+    }
+    20%
+    {
+        stroke-dashoffset: 1560;
+    }
+    40%
+    {
+        stroke-dashoffset: 3120;
+    }
+    60%
+    {
+        stroke-dashoffset: 3120;
+        stroke-dasharray: 0;
+        fill: #0030ceb0;
+
+    }
+    80%{
+        fill: #0030ce52;
+    }
+    100%{
+        stroke-dashoffset: 0;
+        fill: transparent;
+        stroke-width: 5;
+    }
+}
+
+/* Texto de Agradecimiento */
+.texto{
+    position: absolute;
+    text-align: center ;
+    margin-top: 30%;
+    margin-left: 2.5em;
+
+}
+.texto__gracias{
+    font-family: 'Nerko One', cursive;
+    font-size: 1.5em;
+    color: #003cff; 
+}
+/* Informacion Personal*/
+.informacion{
+    position: absolute;
+    bottom: 2em;
+    color:#0f116a;
+}
+
+.informacion__titulo{
+    font-size: 25px;
+    color: rgb(0, 16, 85);
+}
+.informacion__descripcion{
+    font-size: 18px;
+}
+
+.habilidad{
+    background-color: hsl(175, 75%, 24%);
+    color:#fff;
+    font-size: 12px;
+    display:inline-block;
+    padding: .5em;
+    text-transform: uppercase;
+}
+
+.habilidades{
+    padding: 0.5em;    
+}
+
+
+/* Proyectos*/
+
+.proyectos{
+    margin-left: 350px;
+    padding: 1em;
+    display: table;
+}
+
+.proyecto{
+    width: 50%;
+    display: table-cell;
+    
+    padding:1em;
+}
+
+.proyecto_imagen{
+    width: 100%;
+
+}
+
+.proyecto_titulo{
+    color: #29597C;
+    font-size: 18px;
+}
+
+.habilidad--proyecto{
+    background-color: #3c59ff;
+    color:#fff;
+    font-size: 12px;
+    display:inline-block;
+    padding: .5em;
+    text-transform: uppercase;
+
+}
+
+.proyecto_descripcion{
+    color: #797D7F;
+
+}
