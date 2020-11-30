@@ -7,6 +7,9 @@
     margin: 0%;
 }
 
+a{
+    text-decoration: none;
+}
 .lateral{
     position: fixed;
     padding: 2em;
@@ -14,10 +17,8 @@
     height: 100%;
     background-color: #3c59ff;
 }
-
  /* Nombre y Foto del perfil*/
 .perfil__circulo{
-    border-radius: 50%;
     width: 60px;
     height: 60px;
     overflow:hidden;
@@ -44,15 +45,18 @@
 
 /* Agradecimientos Container */
 .agradecimiento-container{
+    position: relative;
     max-width:350px;
     max-height: 50%;
     stroke-width: 15;
 }
 
 /* Estrella */
+
 .estrella{
-    position: relative;
-    margin-top: 20%;
+    position: absolute;
+    margin-top: 30%;
+    z-index: 1;
 }
 .estrella path{
     fill: #0030ce;
@@ -99,10 +103,9 @@
 /* Texto de Agradecimiento */
 .texto{
     position: absolute;
+    margin-top: 70%;
     text-align: center ;
-    margin-top: 30%;
     margin-left: 2.5em;
-
 }
 .texto__gracias{
     font-family: 'Nerko One', cursive;
@@ -113,17 +116,50 @@
 .informacion{
     position: absolute;
     bottom: 2em;
-    color:#0f116a;
 }
 
 .informacion__titulo{
     font-size: 25px;
-    color: rgb(0, 16, 85);
 }
 .informacion__descripcion{
     font-size: 18px;
+    color: black;
 }
-
+.informacion__descripcion .informacion__link:hover{
+    color: #829fff;
+}
+ /* Proyectos*/
+.proyectos{
+    margin-left: 350px;
+    padding: 2em 3em;
+}
+ /* row*/
+ .row{
+    display: grid;
+    margin: auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+ }
+ /* proyecto*/
+ .proyecto{
+    background-color:#3c59ff52;
+    padding: .5em;
+    border-style: solid;
+    border-color: #3c59ff74;;
+ }
+.proyecto__imagen{
+    width: 100%;
+    height: 45vh;
+}
+.proyecto__titulo{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 22px;
+    color: black;
+}
+.proyecto__descripcion{
+    color: black;
+}
+/* Habilidades*/
 .habilidad{
     background-color: hsl(175, 75%, 24%);
     color:#fff;
@@ -135,45 +171,90 @@
 
 .habilidades{
     padding: 0.5em;    
+    text-align: center;
 }
 
-
-/* Proyectos*/
-
-.proyectos{
-    margin-left: 350px;
-    padding: 1em;
-    display: table;
-}
-
-.proyecto{
-    width: 50%;
-    display: table-cell;
-    
-    padding:1em;
-}
-
-.proyecto_imagen{
-    width: 100%;
-
-}
-
-.proyecto_titulo{
-    color: #29597C;
-    font-size: 18px;
-}
-
-.habilidad--proyecto{
+.habilidad__proyecto{
     background-color: #3c59ff;
     color:#fff;
-    font-size: 12px;
+    font-size: 15px;
     display:inline-block;
-    padding: .5em;
+    padding: .7em;
     text-transform: uppercase;
-
+}
+.proyecto__descripcion{
+    margin-left: 5px;
 }
 
-.proyecto_descripcion{
-    color: #797D7F;
+/* MEDIA QUERIES */
 
+@media screen and (min-width: 1920px) {
+
+}
+@media screen and (min-width: 720px) and (max-width: 1440px) {
+    .row{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+    .proyecto__imagen{
+        height: 20vh;
+    }
+    .habilidad__proyecto{
+        margin: 5px;
+    }
+    .informacion{
+    position: relative;
+    top: 30em;
+    }
+}
+@media screen and (max-width: 720px) {    
+    
+    .lateral{
+        width: 100%;
+        height: 460px;
+        position: relative;
+    }
+    .perfil{
+        display: block;
+    }
+    .perfil__circulo{
+        display: block;
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        overflow:hidden;
+        border-radius:50%; 
+    }
+    .perfil__nombres{
+        display: block;
+        position: relative;
+        margin-left: auto;
+    }
+    .perfil__nombres{
+        margin: auto;
+        margin-top: 10px;
+        text-align: center;
+        font-size: 30px;
+    }
+    .agradecimiento-container{
+        visibility: hidden;
+    }
+    .informacion{
+        margin-bottom: 0px;
+    }
+    .proyectos{
+        margin-left: 0px;
+    padding: .5em 1em;;
+    }
+    .row{
+        grid-template-columns: repeat(1, 1fr);
+        gap: 10px;
+    }
+    .proyecto__imagen{
+    height: 25vh;
+    }
+    .habilidad__proyecto{
+        font-size: 12px;
+        margin: 5px;
+    }
 }
